@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Document</title>
+  </head>
+      <style>
+      h2,h1,form{ text-decoration-style: solid;
+
+        font-size: 30px;
+        text-indent: 500px;
+      }
+
+      </style>
+      <body>
+          <h1><u>LIST OF ALL BOOKS</u></h1>
+          <form action="/snippet/" method="post">{%csrf_token%}<input type="submit" value="ADD BOOKS TO THE LIST"></form>
+          <br><br><br>
+          {% for bk in book %}
+            <h2>*<i>{{bk.book_title}}<a href={{bk.id}}>details</a></i></h2>
+
+          {%endfor%}
+      </body>
+
+
+
+</html>

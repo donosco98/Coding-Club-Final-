@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Document</title>
+  </head>
+      <style>
+      p,div{ text-decoration-style: solid;
+        text-align: center;
+        font-size: 30px;
+
+      }
+      body{
+        border-style: dashed;
+        border-radius: 20px;
+
+      }
+      </style>
+      <body>
+              <p>BOOK TITLE:{{text.book_title}}</p>
+              <p>AUTHOR: {{text.author}}</p>
+              <p>GENRE:{{text.genre}}</p>
+              <p>PRICE:{{text.price}} Rs</p>
+      </body>
+
+      <br>
+      <div>
+
+      <form action="{{text.id}}/add" method="post">{%csrf_token%}<input type="submit" value="INCREASE THE PRICE OF BOOK"></form>
+      <form action="{{text.id}}/decrease" method="post">{%csrf_token%}<input type="submit" value="DECREASE THE PRICE OF BOOK"></form>
+      <form action="{{text.id}}/go_back" method="post">
+        {%csrf_token%}
+        <input type="submit" value="GO BACK TO HOME PAGE">
+
+      </form>
+      <form action="{{text.id}}/pay" method="post">{%csrf_token%}<input type="submit" value="BUY THE BOOK"></form>
+
+    </div>
+
+</html>
